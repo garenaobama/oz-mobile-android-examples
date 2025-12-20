@@ -1,0 +1,3 @@
+[submodule "googleads-mobile-android-examples"]
+	path = googleads-mobile-android-examples
+	url = https://github.com/googleads/googleads-mobile-android-examples.git
