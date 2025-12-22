@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
     private fun initAds(){
         lifecycleScope.launch {
             OzAdsManager.getInstance().init(this@MainActivity)
-            OzAdsManager.getInstance().setShouldShowAds(true)
+            OzAdsManager.getInstance().setEnableAd(true)
         }
     }
 }
