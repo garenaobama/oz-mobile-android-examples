@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.oz.android.ads.screens.banner_ads.BannerAdsExampleScreen
 import com.oz.android.ads.screens.home.HomeScreen
+import com.oz.android.ads.screens.native_ads.NativeAdsExampleScreen
 
 @Composable
 fun NavGraph() {
@@ -23,6 +24,9 @@ fun NavGraph() {
         }
         composable(Screen.BannerAdsExample.route) {
             BannerAdsExampleScreen()
+        }
+        composable(Screen.NativeAdsExample.route) {
+            NativeAdsExampleScreen()
         }
     }
 }

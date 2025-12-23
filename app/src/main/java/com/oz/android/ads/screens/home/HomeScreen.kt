@@ -21,5 +21,8 @@ fun HomeScreen(navController: NavController) {
         Button(onClick = { navController.navigate(Screen.BannerAdsExample.route) }) {
             Text(text = "Banner Ads Example")
         }
+        Button(onClick = { navController.navigate(Screen.NativeAdsExample.route) }) {
+            Text(text = "Native Ads Example")
+        }
     }
 }
