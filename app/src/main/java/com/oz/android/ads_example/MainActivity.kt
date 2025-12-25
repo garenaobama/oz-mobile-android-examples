@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.lifecycleScope
 import com.oz.android.ads_example.navigation.NavGraph
-import com.oz.android.ads.oz_ads.OzAdsManager
+import com.oz.android.wrapper.OzAdsManager
 import com.oz.android.ads_example.ui.theme.OzAdmobTheme
 import kotlinx.coroutines.launch
 

@@ -27,7 +27,7 @@ fun NavGraph() {
             NativeAdsExampleScreen()
         }
         composable(Screen.InterstitialAdsExample.route) {
-            InterAdsExampleScreen()
+            InterAdsExampleScreen(navController = navController)
         }
         composable(Screen.AppOpenAdsExample.route) {
             AppOpenAdsExampleScreen()
