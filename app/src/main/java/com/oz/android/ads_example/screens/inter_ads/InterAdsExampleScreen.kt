@@ -40,6 +40,7 @@ fun InterAdsExampleScreen(
             OzAdmobIntersAd(context).apply {
                 val key = "inter_1"
                 setAdUnitId(key, "ca-app-pub-3940256099942544/1033173712")
+                setTimeGap(1000)
                 onLoadErrorCallback = { k, error -> 
                     if (k == key) viewModel.setLoadError(this, error)
                 }
@@ -64,6 +65,12 @@ fun InterAdsExampleScreen(
 
     DisposableEffect(Unit) {
         viewModel.setInterstitialAds(interstitialAds)
+        if (interstitialAds.isNotEmpty()) {
+            viewModel.setAdConfig(interstitialAds[0], true)
+        }
+        if (interstitialAds.size > 1) {
+            viewModel.setAdConfig(interstitialAds[1], false)
+        }
         onDispose {
             interstitialAds.forEach { it.destroy() }
         }
@@ -171,7 +178,8 @@ private fun AdItem(
                     modifier = Modifier.padding(bottom = 8.dp),
                     enabled = cooldownTime == 0L
                 ) {
-                    Text(text = "Load Ad")
+                    val isBackground = status?.isLoadInBackground == true
+                    Text(text = "Load Ad" + if (isBackground) " (Background)" else "")
                 }
                 Button(
                     onClick = { viewModel.showAd(ad, activity) },

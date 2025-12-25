@@ -5,19 +5,21 @@ import androidx.lifecycle.ViewModel
 import com.oz.android.wrapper.OzAdmobIntersAd
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
 data class AdStatus(
     val ad: OzAdmobIntersAd,
     val loadError: String? = null,
-    val showError: String? = null
+    val showError: String? = null,
+    val isLoadInBackground: Boolean = false
 )
 
 class InterAdsViewModel : ViewModel() {
     private val _intersAds = MutableStateFlow<List<OzAdmobIntersAd>>(emptyList())
-    val intersAds: StateFlow<List<OzAdmobIntersAd>> = _intersAds
+    val intersAds: StateFlow<List<OzAdmobIntersAd>> = _intersAds.asStateFlow()
 
     private val _adStatuses = MutableStateFlow<Map<OzAdmobIntersAd, AdStatus>>(emptyMap())
-    val adStatuses: StateFlow<Map<OzAdmobIntersAd, AdStatus>> = _adStatuses
+    val adStatuses: StateFlow<Map<OzAdmobIntersAd, AdStatus>> = _adStatuses.asStateFlow()
 
     fun setInterstitialAds(ads: List<OzAdmobIntersAd>) {
         _intersAds.value = ads
@@ -25,9 +27,15 @@ class InterAdsViewModel : ViewModel() {
         _adStatuses.value = ads.associateWith { AdStatus(it) }
     }
 
+    fun setAdConfig(ad: OzAdmobIntersAd, isLoadInBackground: Boolean) {
+        val currentStatus = _adStatuses.value[ad] ?: AdStatus(ad)
+        _adStatuses.value = _adStatuses.value + (ad to currentStatus.copy(isLoadInBackground = isLoadInBackground))
+    }
+
     fun loadAd(ad: OzAdmobIntersAd) {
         clearErrors(ad)
-        ad.loadAd()
+        val isLoadInBackground = _adStatuses.value[ad]?.isLoadInBackground ?: false
+        ad.loadAd(isLoadInBackground)
     }
 
     fun showAd(ad: OzAdmobIntersAd, activity: Activity) {
