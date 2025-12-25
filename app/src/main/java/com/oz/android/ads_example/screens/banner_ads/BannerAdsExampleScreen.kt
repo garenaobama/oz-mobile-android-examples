@@ -19,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.oz.android.ads.oz_ads.ads_component.ads_inline.admob.OzAdmobBannerAd
+import com.oz.android.wrapper.OzAdmobBannerAd
 
 @Composable
 @Preview

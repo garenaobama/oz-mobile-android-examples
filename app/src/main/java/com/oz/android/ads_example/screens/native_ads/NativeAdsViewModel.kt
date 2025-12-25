@@ -1,7 +1,7 @@
 package com.oz.android.ads_example.screens.native_ads
 
 import androidx.lifecycle.ViewModel
-import com.oz.android.ads.oz_ads.ads_component.ads_inline.admob.OzAdmobNativeAd
+import com.oz.android.wrapper.OzAdmobNativeAd
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 

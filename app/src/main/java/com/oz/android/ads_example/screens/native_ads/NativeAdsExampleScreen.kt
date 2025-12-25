@@ -2,7 +2,6 @@ package com.oz.android.ads_example.screens.native_ads
 
 import android.content.Context
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,8 +21,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.oz.android.ads.oz_ads.ads_component.ads_inline.admob.OzAdmobNativeAd
 import com.oz.android.ads_example.R
+import com.oz.android.wrapper.OzAdmobNativeAd
 
 @Composable
 @Preview

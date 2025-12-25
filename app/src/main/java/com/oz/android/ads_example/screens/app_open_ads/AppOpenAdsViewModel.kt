@@ -2,7 +2,7 @@ package com.oz.android.ads_example.screens.app_open_ads
 
 import android.app.Activity
 import androidx.lifecycle.ViewModel
-import com.oz.android.ads.oz_ads.ads_component.ads_overlay.admob.OzAdmobOpenAd
+import com.oz.android.wrapper.OzAdmobOpenAd
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 

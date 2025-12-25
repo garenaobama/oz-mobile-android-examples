@@ -24,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.oz.android.ads.oz_ads.ads_component.ads_overlay.admob.OzAdmobOpenAd
+import com.oz.android.wrapper.OzAdmobOpenAd
 import kotlinx.coroutines.delay
 
 @Composable
