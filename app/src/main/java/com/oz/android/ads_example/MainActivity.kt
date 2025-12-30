@@ -25,7 +25,9 @@ import com.oz.android.wrapper.OzAdsManager
 import com.oz.android.ads_example.ui.theme.OzAdmobTheme
 import kotlinx.coroutines.launch
 
-class MainActivity : ComponentActivity() {
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +61,7 @@ class MainActivity : ComponentActivity() {
 
     private fun initAds(){
         lifecycleScope.launch {
-            OzAdsManager.getInstance().init(this@MainActivity, emptyList())
+            OzAdsManager.getInstance().init(this@MainActivity)
             OzAdsManager.getInstance().setEnableAd(true)
         }
     }

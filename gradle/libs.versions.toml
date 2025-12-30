@@ -1,6 +1,8 @@
 [versions]
 agp = "8.13.2"
 appcompat = "1.7.1"
+appcompatVersion = "1.6.1"
+fragmentKtx = "1.8.9"
 kotlin = "2.2.0"
 coreKtx = "1.17.0"
 junit = "4.13.2"
@@ -20,10 +22,13 @@ material = "1.13.0"
 intuitSdp = "1.1.1"
 constraintlayout = "2.2.1"
 playServicesMeasurementApi = "23.0.0"
+uiViewbinding = "1.10.0"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-appcompat-v161 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -51,6 +56,7 @@ play-services-ads-api = { group = "com.google.android.gms", name = "play-service
 shimmer-android-core = { module = "io.github.usefulness:shimmer-android-core", version.ref = "shimmerAndroidCore" }
 user-messaging-platform = { module = "com.google.android.ump:user-messaging-platform", version.ref = "userMessagingPlatform" }
 play-services-measurement-api = { group = "com.google.android.gms", name = "play-services-measurement-api", version.ref = "playServicesMeasurementApi" }
+androidx-compose-ui-viewbinding = { group = "androidx.compose.ui", name = "ui-viewbinding", version.ref = "uiViewbinding" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

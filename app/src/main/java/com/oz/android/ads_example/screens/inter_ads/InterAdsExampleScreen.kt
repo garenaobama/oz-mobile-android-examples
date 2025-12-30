@@ -27,7 +27,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.oz.android.ads.network.admobs.ads_component.interstitial.AdmobInterstitial
 import com.oz.android.ads_example.navigation.Screen
-import com.oz.android.ads.utils.listener.OzAdListener
+import com.oz.android.utils.listener.OzAdListener
 import com.oz.android.wrapper.OzAdmobIntersAd
 import kotlinx.coroutines.delay
 
@@ -46,12 +46,6 @@ fun InterAdsExampleScreen(
                 val key = "inter_1"
                 setAdUnitId(key, "ca-app-pub-3940256099942544/1033173712")
                 setTimeGap(1000)
-                onLoadErrorCallback = { k, error ->
-                    if (k == key) viewModel.setLoadError(this, error)
-                }
-                onShowErrorCallback = { k, error ->
-                    if (k == key) viewModel.setShowError(this, error)
-                }
                 listener = object : OzAdListener<AdmobInterstitial>() {
                     override fun onAdShowedFullScreenContent() {
                         navController.navigate(Screen.Home.route)
@@ -62,12 +56,6 @@ fun InterAdsExampleScreen(
             OzAdmobIntersAd(context).apply {
                 val key = "inter_2"
                 setAdUnitId(key, "ca-app-pub-3940256099942544/1033173712")
-                onLoadErrorCallback = { k, error ->
-                    if (k == key) viewModel.setLoadError(this, error)
-                }
-                onShowErrorCallback = { k, error ->
-                    if (k == key) viewModel.setShowError(this, error)
-                }
             }
         )
     }

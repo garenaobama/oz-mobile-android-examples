@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -36,6 +37,7 @@ fun BannerAdsExampleScreen(
             OzAdmobBannerAd(context).apply {
                 setAdUnitId("banner_2", "ca-app-pub-3940256099942544/6300978111")
                 setRefreshTime(10000)
+                loadThenShow()
             }
         )
     }
@@ -54,10 +56,10 @@ fun BannerAdsExampleScreen(
     ) {
         items(bannerAds) { ad ->
             Column(modifier = Modifier
-                .padding(16.dp)
                 .border(width = 1.dp, color = Color(0))) {
                 Text(text = if (ad.getRefreshTime() > 0) "Refreshing Banner Ad" else "Normal Banner Ad")
                 AndroidView(
+                    modifier = Modifier.height(60.dp),
                     factory = { ad },
                 )
                 Button(onClick = { viewModel.refreshAd(ad) }) {

@@ -57,6 +57,12 @@ fun HomeScreen(navController: NavController) {
             icon = Icons.Outlined.Smartphone,
             onClick = { navController.navigate(Screen.AppOpenAdsExample.route) }
         )
+        AdEntryButton(
+            title = "Native Ads Stress",
+            subtitle = "Stress test for Native Ads",
+            icon = Icons.Outlined.Image,
+            onClick = { navController.navigate(Screen.NativeAdsStress.route) }
+        )
     }
 }
 

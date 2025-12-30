@@ -40,22 +40,10 @@ fun AppOpenAdsExampleScreen(
             OzAdmobOpenAd(context).apply {
                 val key = "app_open_1"
                 setAdUnitId(key, "ca-app-pub-3940256099942544/9257395921")
-                onLoadErrorCallback = { k, error ->
-                    if (k == key) viewModel.setLoadError(this, error)
-                }
-                onShowErrorCallback = { k, error ->
-                    if (k == key) viewModel.setShowError(this, error)
-                }
             },
             OzAdmobOpenAd(context).apply {
                 val key = "app_open_2"
                 setAdUnitId(key, "ca-app-pub-3940256099942544/9257395921")
-                onLoadErrorCallback = { k, error ->
-                    if (k == key) viewModel.setLoadError(this, error)
-                }
-                onShowErrorCallback = { k, error ->
-                    if (k == key) viewModel.setShowError(this, error)
-                }
             }
         )
     }

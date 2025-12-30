@@ -45,6 +45,7 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
+        viewBinding = true
     }
 
     flavorDimensions += listOf("adIds")
@@ -69,6 +70,8 @@ dependencies {
     implementation(project(":oz_uikit"))
 
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat.v161)
+    implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -83,6 +86,7 @@ dependencies {
     implementation(libs.play.services.ads.api)
     implementation(libs.intuit.sdp)
     implementation(libs.material)
+    implementation(libs.androidx.compose.ui.viewbinding)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

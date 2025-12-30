@@ -1,9 +1,11 @@
 package com.oz.android.ads_example.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.viewinterop.AndroidViewBinding
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.oz.android.ads_example.databinding.LayoutFragmentContainerNativeStressBinding
 import com.oz.android.ads_example.screens.app_open_ads.AppOpenAdsExampleScreen
 import com.oz.android.ads_example.screens.banner_ads.BannerAdsExampleScreen
 import com.oz.android.ads_example.screens.home.HomeScreen
@@ -31,6 +33,9 @@ fun NavGraph() {
         }
         composable(Screen.AppOpenAdsExample.route) {
             AppOpenAdsExampleScreen()
+        }
+        composable(Screen.NativeAdsStress.route) {
+             AndroidViewBinding(LayoutFragmentContainerNativeStressBinding::inflate)
         }
     }
 }
